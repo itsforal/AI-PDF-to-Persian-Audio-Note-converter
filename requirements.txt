@@ -1,0 +1,8 @@
+google-generativeai
+openai
+pymupdf
+Pillow
+pydub
+edge-tts
+nest_asyncio
+python-dotenv

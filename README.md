@@ -3,27 +3,20 @@
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![AI](https://img.shields.io/badge/GenAI-Gemini%20%26%20DeepSeek-orange)
 
-## 📄 Overview
-This tool automates the conversion of complex academic PDF textbooks (containing math and diagrams) into high-quality, pedagogical lecture notes in **Persian (Farsi)**, followed by generating an audio version (Audiobook).
+## Overview
+This project implements an **experimental pipeline** to automate the conversion of academic PDF textbooks (containing math and diagrams) into **structured lecture notes** in Persian (Farsi), and subsequently generates audio versions.
 
-It solves the problem of digitizing and studying hard-copy academic material by leveraging a multi-model AI pipeline.
+The tool aims to **streamline the study process** by bridging the gap between hard-copy academic material and digital accessibility tools.
 
-## 🚀 Features
-1.  **Optical Character Recognition (OCR) with Vision AI**: Uses **Google Gemini Pro Vision** to extract text and LaTeX math formulas from PDF images.
-2.  **Pedagogical Refinement**: Uses **DeepSeek V3** to rewrite raw extractions into structured, academic Persian lecture notes.
-3.  **State Management**: Tracks progress (`process_log.json`) to resume operations in case of interruptions.
-4.  **Audiobook Generation**: Converts the final Markdown notes into an MP3 file using **Edge-TTS** (Neural voice).
+## Key Features
+1.  **Visual Extraction Pipeline**: Utilizes **Google Gemini Pro Vision** to parse text and \LaTeX{} math formulas directly from rendered PDF page images.
+2.  **Content Refinement**: Integrates **DeepSeek V3** to rewrite raw extractions into coherent, academic Persian summaries.
+3.  **Resumable Workflow**: Implements state management (via JSON logs) to handle interruptions during long processing tasks.
+4.  **Audio Synthesis**: Converts the final Markdown notes into audio files using **Edge-TTS**, supporting bilingual context.
 
-## 🛠️ Architecture
+## System Architecture
 - **Input**: PDF Document.
-- **Stage 1**: `PyMuPDF` renders pages to High-DPI images.
-- **Stage 2**: `Gemini API` performs visual extraction (Text + LaTeX).
-- **Stage 3**: `DeepSeek API` contextually summarizes and translates to Persian.
-- **Stage 4**: `EdgeTTS` + `PyDub` synthesizes and merges audio segments.
-
-## 📦 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/lecture-note-generator.git
-   cd lecture-note-generator
+- **Stage 1 (Rendering)**: `PyMuPDF` converts pages to High-DPI images for vision analysis.
+- **Stage 2 (Vision)**: `Gemini API` extracts visual data and mathematical notation.
+- **Stage 3 (Refinement)**: `DeepSeek API` structures the content for readability.
+- **Stage 4 (Audio)**: `EdgeTTS` + `PyDub` synthesize and merge audio segments.

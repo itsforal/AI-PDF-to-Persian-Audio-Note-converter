@@ -231,7 +231,7 @@ def main():
     
     doc = fitz.open(Config.PDF_SOURCE)
     total_pages = len(doc)
-    print(f"🚀 Starting processing from page {start_page + 1}/{total_pages}")
+    print(f" Starting processing from page {start_page + 1}/{total_pages}")
 
     # --- Processing Loop ---
     for i in range(start_page, total_pages):
@@ -260,7 +260,7 @@ def main():
         
         time.sleep(2) # Rate limit cooling
 
-    print("\n✨ Processing Complete. Starting Audio Generation...")
+    print("\n Processing Complete. Starting Audio Generation...")
     
     # --- Audio Generation ---
     try:
